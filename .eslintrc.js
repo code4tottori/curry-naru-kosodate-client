@@ -42,7 +42,7 @@ module.exports = {
     "id-blacklist": 0,
     "id-length": 0,
     "id-match": 0,
-    "indent": [1, 2, {
+    "indent": [1, "tab", {
       "VariableDeclarator": { "var": 2, "let": 2, "const": 3 },
       "SwitchCase": 1
     }],

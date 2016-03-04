@@ -30,7 +30,7 @@ module.exports = {
     "react/jsx-equals-spacing": [1, "never"],
     "react/jsx-handler-names": 0,
     "react/jsx-indent-props": [1, 2],
-    "react/jsx-indent": [1, 2],
+    "react/jsx-indent": [1, "tab"],
     "react/jsx-key": 2,
     "react/jsx-max-props-per-line": [1, { "maximum": 5 }],
     "react/jsx-no-bind": [1, {
