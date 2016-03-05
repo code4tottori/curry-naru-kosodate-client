@@ -225,7 +225,7 @@ const Login = React.createClass({
 	render() {
 		return (
 			<section>
-				<form action="http://localhost/#/index" method="">
+				<form action="http://localhost:3000/#/index" method="">
 					<h1 className="page-title">ログイン</h1>
 					<div className="form-box">
 						<div className="form-contents">
