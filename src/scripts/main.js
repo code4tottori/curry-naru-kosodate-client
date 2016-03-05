@@ -1,61 +1,53 @@
+import { render } from "react-dom";
 import { Router, Route, Link } from "react-router";
 import React from "react";
 
-const App = React.createClass({
 
-});
-
-const Top = React.createClass({
+const Header = React.createClass({
 	render() {
+		return (
+			<header>
+				<div className="title">
+					<img src="images/title.png" className="title-img" />
+				</div>
+					<ul className="title-menu">
+						<li><Link to="sign_up">新規登録</Link></li>
+						<li><Link to="login">ログイン</Link></li>
+					</ul>
+			</header>
+    );
 	}
 });
 
-const Users = React.createClass({
+const App = React.createClass({
 	render() {
 		return (
-			<div>
-				<h1>Users</h1>
-				<div className="master">
-					<ul>
-						{/* use Link to route around the app */}
-            {this.state.users.map(user => (
-              <li key={user.id}><Link to={`/user/${user.id}`}>{user.name}</Link></li>
-            ))}
-					</ul>
-				</div>
-				<div className="detail">
-					{this.props.children}
-				</div>
-			</div>
+			<section>
+				<Header />
+				{this.props.children}
+			</section>
+    );
+	}
+});
+
+const Login = React.createClass({
+	render() {
+		return (
+			<div>Login</div>
 		);
 	}
 });
-
-const User = React.createClass({
-	componentDidMount() {
-		this.setState({
-			// route components are rendered with useful information, like URL params
-      user: findUserById(this.props.params.userId)
-		});
-	},
-
+const Signup = React.createClass({
 	render() {
-    return (
-      <div>
-        <h2>{this.state.user.name}</h2>
-        {/* etc. */}
-      </div>
-    );
-  }
-})
+		return <h3>About</h3>;
+	}
+});
+
 render((
-	<Router history={browserHistory}>
+	<Router>
 		<Route path="/" component={App}>
-			<Route path="top" component={Top} />
-			<Route path="users" component={Users}>
-				<Route path="/user/:userId" component={User} />
-			</Route>
-			<Route path="*" component={NoMatch} />
+			<Route path="sign_up" component={Signup} />
+			<Route path="login" component={Login} />
 		</Route>
 	</Router>
 ), document.body);
